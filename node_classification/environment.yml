@@ -1,0 +1,27 @@
+name: himp-nc
+channels:
+  - pytorch
+  - nvidia
+  - pyg
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  # - pytorch=2.4.0
+  - pip
+  - pip:
+    - --find-links https://download.pytorch.org/whl/cu124
+    - torch==2.4.0
+    - --find-links https://data.pyg.org/whl/torch-2.4.0+cu124.html
+    - torch-geometric
+    - torch-scatter
+    - torch-sparse 
+    - pandas
+    - matplotlib
+    - tabulate
+    - tqdm
+    - tikzplotlib
+    - numpy
+    - torchsummary
+
+    
