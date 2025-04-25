@@ -7,7 +7,6 @@ channels:
   - defaults
 dependencies:
   - python=3.12
-  # - pytorch=2.4.0
   - pip
   - pip:
     - --find-links https://download.pytorch.org/whl/cu124
@@ -16,6 +15,7 @@ dependencies:
     - torch-geometric
     - torch-scatter
     - torch-sparse 
+    - scikit-learn
     - pandas
     - matplotlib
     - tabulate
