@@ -23,27 +23,42 @@ This is the public codes for TMLR2025 paper: "Heterophily-informed Message Passi
 </div>
 
 ## Experiment 1: Node classification
-
+Get into the node classification directory at first
+```
+cd node_classification
+```
 ### 1) Environment setup
 The environment of node classification experiment is installed by the following command
 ```
-conda env create -f node_classification/environment.yml 
+conda env create -f environment.yml 
+conda activate himp-nc
 ```
 ### 2) Dataset 
+The data is donwloaded automatically if you run the training script.
 
 
 
+### 3) Training the model
+This is how to train a GNN model with different versions of message passing
+```
+python main.py  --data_name ${dataname} --model_name ${gnn} --het_mode ${het_mode} --save_dir ${save_dir}
+```
+The arguments notes:
+- `--data_name`, the name of dataset. Options `( Cora CiteSeer PubMed Cornell Texas Wisconsin Computers Photo Chameleon Squirrel Roman-empire Amazon-ratings Minesweeper Tolokers Questions )`
+- `--model_name`, the GNN types. Options: `( GCN GAT GIN GraphSAGE )`
+- `het_mode` , the heterophily-preference of message passing. Options: `( original heterophily homophily mix )`
 
+One example script for running `GCN+het.` on Cora dataset:
+```
+source scripts/example_nc.sh
+```
 
-### 3) Data download
-
-### 4) Evaluation
 
 ## Experiment 2: Molecular generation
 ### 1) Environment setup
 
 ### 2) Dataset
 
-### 3) Data download
+### 3) Training
 
 ### 4) Evaluation 
