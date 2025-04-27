@@ -23,7 +23,7 @@ This is the public codes for TMLR2025 paper: "Heterophily-informed Message Passi
 </div>
 
 ## Experiment 1: Node classification
-Get into the node classification directory at first
+Get into the experiment directory of node classification at first:
 ```
 cd node_classification
 ```
@@ -54,10 +54,22 @@ source scripts/example_nc.sh
 ```
 
 ## Experiment 2: Molecular generation
+Get into the experiment directory of molecular generation at first:
+```
+cd molecule_generation
+```
 ### 1) Environment setup
-
-### 2) Dataset
-
+<!-- TODO -->
+### 2) Dataset preprocess 
+(Note: start from dir `molecule_generation` and end back to dir `molecule_generation`)
+Preprocess SMILES strings to be molecular graphs
+```
+cd data
+python data_preprocess.py --data_name qm9
+python data_preprocess.py --data_name zinc250k
+cd ..
+```
 ### 3) Training
+
 
 ### 4) Evaluation 
