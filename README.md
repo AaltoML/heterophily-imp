@@ -44,15 +44,14 @@ This is how to train a GNN model with different versions of message passing
 python main.py  --data_name ${dataname} --model_name ${gnn} --het_mode ${het_mode} --save_dir ${save_dir}
 ```
 The arguments notes:
-- `--data_name`, the name of dataset. Options `( Cora CiteSeer PubMed Cornell Texas Wisconsin Computers Photo Chameleon Squirrel Roman-empire Amazon-ratings Minesweeper Tolokers Questions )`
+- `--data_name`, the name of dataset. Options: `( Cora CiteSeer PubMed Cornell Texas Wisconsin Computers Photo Chameleon Squirrel Roman-empire Amazon-ratings Minesweeper Tolokers Questions )`
 - `--model_name`, the GNN types. Options: `( GCN GAT GIN GraphSAGE )`
-- `het_mode` , the heterophily-preference of message passing. Options: `( original heterophily homophily mix )`
-
+- `het_mode`, the heterophily-preference of message passing. Options: `( original heterophily homophily mix )`
+- `save_dir`, the path of running result, including the metric of best model, and trained model.
 One example script for running `GCN+het.` on Cora dataset:
 ```
 source scripts/example_nc.sh
 ```
-
 
 ## Experiment 2: Molecular generation
 ### 1) Environment setup
