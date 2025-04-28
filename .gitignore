@@ -1,6 +1,7 @@
 test/
 __pycache__
 results*
-data/
+node_classification/data/
 *.npz
 *.pt
+*.pkl

@@ -6,7 +6,7 @@
   <p align="center">
     <a href="https://haishan-wang.github.io">Haishan Wang</a> ·
     <a href="https://users.aalto.fi/~asolin/">Arno Solin</a> .
-    <a href="https://quml.aalto.fi/author/vikas-garg/">Vikas Garg</a> .
+    <a href="https://quml.aalto.fi/author/vikas-garg/">Vikas Garg</a> 
   </p>
 
   <h2 align="center">TMLR 2025</h2>
@@ -64,10 +64,8 @@ cd molecule_generation
 (Note: start from dir `molecule_generation` and end back to dir `molecule_generation`)
 Preprocess SMILES strings to be molecular graphs
 ```
-cd data
-python data_preprocess.py --data_name qm9
-python data_preprocess.py --data_name zinc250k
-cd ..
+python data/data_preprocess.py --data_name qm9
+python data/data_preprocess.py --data_name zinc250k
 ```
 ### 3) Training
 

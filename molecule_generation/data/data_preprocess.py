@@ -1,15 +1,15 @@
 import os
 import sys
 # for linux env.
-sys.path.insert(0,'..')
+# sys.path.insert(0,'..')
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
 import argparse
 import time
-from data.data_frame_parser import DataFrameParser
-from data.data_loader import NumpyTupleDataset
-from data.smile_to_graph import GGNNPreprocessor
+from data_frame_parser import DataFrameParser
+from data_loader import NumpyTupleDataset
+from smile_to_graph import GGNNPreprocessor
 import pickle
 
 
@@ -45,12 +45,12 @@ if data_type == 'relgcn':
 else:
     raise ValueError("[ERROR] Unexpected value data_type={}".format(data_type))
 
-data_dir = "."
+data_dir = "data"
 os.makedirs(data_dir, exist_ok=True)
 
 if data_name == 'qm9':
     print('Preprocessing qm9 data:')
-    df_qm9 = pd.read_csv('qm9.csv', index_col=0)
+    df_qm9 = pd.read_csv('data/qm9.csv', index_col=0)
     labels = ['A', 'B', 'C', 'mu', 'alpha', 'homo', 'lumo', 'gap', 'r2',
               'zpve', 'U0', 'U', 'H', 'G', 'Cv']
     parser = DataFrameParser(preprocessor, labels=labels, smiles_col='SMILES1')
@@ -60,7 +60,7 @@ if data_name == 'qm9':
 elif data_name == 'zinc250k':
     print('Preprocessing zinc250k data')
     # dataset = datasets.get_zinc250k(preprocessor)
-    df_zinc250k = pd.read_csv('zinc250k.csv', index_col=0)
+    df_zinc250k = pd.read_csv('data/zinc250k.csv', index_col=0)
     # Caution: Not reasonable but used in used in chain_chemistry\datasets\zinc.py:
     # 'smiles' column contains '\n', need to remove it.
     # Here we do not remove \n, because it represents atom N with single bond
