@@ -6,7 +6,7 @@ import random
 
 from data import transform_qm9
 from data.transform_zinc250k import one_hot_zinc250k, transform_fn_zinc250k
-from hetflow.models.model import MoFlow as Model
+from hetflow.models.model import HetFlow as Model
 def set_up_seed(seed): 
     random.seed(seed)
     np.random.seed(seed)

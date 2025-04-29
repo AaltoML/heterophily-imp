@@ -2,7 +2,7 @@ import argparse
 import os
 import sys
 # for linux env.
-sys.path.insert(0,'..')
+# sys.path.insert(0,'..')
 from distutils.util import strtobool
 import torch
 import torch.nn as nn
@@ -22,7 +22,7 @@ from data.transform_zinc250k import zinc250_atomic_num_list, transform_fn_zinc25
 from hetflow.models.hyperparams import Hyperparameters
 from hetflow.models.utils import check_validity, adj_to_smiles, check_novelty, valid_mol, construct_mol, _to_numpy_array, correct_mol,valid_mol_can_with_seg
 from hetflow.utils.model_utils import load_model, get_latent_vec
-from hetflow.models.model import MoFlow, rescale_adj
+from hetflow.models.model import HetFlow, rescale_adj
 import hetflow.utils.environment as env
 
 # from IPython.display import SVG, display

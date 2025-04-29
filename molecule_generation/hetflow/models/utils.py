@@ -5,7 +5,7 @@ from rdkit import Chem
 from rdkit.Chem import Draw
 import re
 import sys
-sys.path.insert(0,'..')
+# sys.path.insert(0,'..')
 from hetflow.metrics import fraction_valid, remove_invalid, fraction_unique
 
 

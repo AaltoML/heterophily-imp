@@ -202,7 +202,7 @@ def train():
         b_n_squeeze = 3
         a_n_node = 9
         a_n_type = len(atomic_num_list)  # 5
-        valid_idx = transform_qm9.get_val_ids()  # len: 13,082, total data: 133,885
+        valid_idx = transform_qm9.get_val_ids((args.data_dir)  # len: 13,082, total data: 133,885
     elif args.data_name == 'zinc250k':
         from data import transform_zinc250k
         atomic_num_list = transform_zinc250k.zinc250_atomic_num_list  # [6, 7, 8, 9, 15, 16, 17, 35, 53, 0]
@@ -210,7 +210,7 @@ def train():
         b_n_squeeze = 19   # 2
         a_n_node = 38
         a_n_type = len(atomic_num_list)  # 10
-        valid_idx = transform_zinc250k.get_val_ids()
+        valid_idx = transform_zinc250k.get_val_ids((args.data_dir)
     else:
         raise ValueError('Only support qm9 and zinc250k right now. '
                          'Parameters need change a little bit for other dataset.')
@@ -266,7 +266,7 @@ def train():
         train, test = torch.utils.data.random_split(
             dataset,
             [int(len(dataset) * 0.8), len(dataset) - int(len(dataset) * 0.8)])
-    train_smiles, _, _ = dataset_loading(args.data_name)
+    train_smiles, _, _ = dataset_loading(args.data_name, data_dir = args.data_dir)
     train_dataloader = torch.utils.data.DataLoader(train, batch_size=args.batch_size,
                                                    shuffle=args.shuffle, num_workers=args.num_workers)
 
