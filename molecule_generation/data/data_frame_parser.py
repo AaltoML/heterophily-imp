@@ -6,8 +6,8 @@ from tqdm import tqdm
 import sys
 # for linux env.
 # sys.path.insert(0,'..')
-from smile_to_graph import GGNNPreprocessor,MolFeatureExtractionError
-from data_loader import NumpyTupleDataset
+from data.smile_to_graph import GGNNPreprocessor,MolFeatureExtractionError
+from data.data_loader import NumpyTupleDataset
 
 import traceback
 # Code adapted from chainer_chemistry\dataset\parsers\data_frame_parser.py

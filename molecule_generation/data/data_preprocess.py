@@ -1,15 +1,15 @@
 import os
 import sys
 # for linux env.
-# sys.path.insert(0,'..')
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
 import argparse
 import time
-from data_frame_parser import DataFrameParser
-from data_loader import NumpyTupleDataset
-from smile_to_graph import GGNNPreprocessor
+from data.data_frame_parser import DataFrameParser
+from data.data_loader import NumpyTupleDataset
+from data.smile_to_graph import GGNNPreprocessor
 import pickle
 
 
