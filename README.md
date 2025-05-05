@@ -10,6 +10,9 @@
   </p>
 
   <h2 align="center">TMLR 2025</h2>
+  <h3>
+    <a href="https://arxiv.org/abs/2504.19785">Paper</a> 
+  </h3>
 
 </div>
 
@@ -59,9 +62,12 @@ Get into the experiment directory of molecular generation at first:
 cd molecule_generation
 ```
 ### 1) Environment setup
-<!-- TODO -->
+```
+conda env create -f environment.yml 
+conda activate hetflow
+```
+
 ### 2) Dataset preprocess 
-(Note: start from dir `molecule_generation` and end back to dir `molecule_generation`)
 Preprocess SMILES strings to be molecular graphs
 ```
 python data/data_preprocess.py --data_name qm9
